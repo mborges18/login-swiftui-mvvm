@@ -15,6 +15,11 @@
 		707D94F42A72FA9B006276F5 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707D94F12A72FA9B006276F5 /* SignInView.swift */; };
 		707D94F52A72FA9B006276F5 /* AccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707D94F22A72FA9B006276F5 /* AccessView.swift */; };
 		707D94F92A72FC34006276F5 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707D94F82A72FC34006276F5 /* SplashView.swift */; };
+		70A7D82C2A8929A400F06E5E /* stellar_bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70A7D8272A8929A400F06E5E /* stellar_bold.otf */; };
+		70A7D82D2A8929A400F06E5E /* stellar_medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70A7D8282A8929A400F06E5E /* stellar_medium.otf */; };
+		70A7D82E2A8929A400F06E5E /* stellar_light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70A7D8292A8929A400F06E5E /* stellar_light.otf */; };
+		70A7D82F2A8929A400F06E5E /* stellar_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70A7D82A2A8929A400F06E5E /* stellar_regular.otf */; };
+		70A7D8302A8929A400F06E5E /* hermano_alto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70A7D82B2A8929A400F06E5E /* hermano_alto.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,12 @@
 		707D94F12A72FA9B006276F5 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		707D94F22A72FA9B006276F5 /* AccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessView.swift; sourceTree = "<group>"; };
 		707D94F82A72FC34006276F5 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		70A7D8272A8929A400F06E5E /* stellar_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = stellar_bold.otf; sourceTree = "<group>"; };
+		70A7D8282A8929A400F06E5E /* stellar_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = stellar_medium.otf; sourceTree = "<group>"; };
+		70A7D8292A8929A400F06E5E /* stellar_light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = stellar_light.otf; sourceTree = "<group>"; };
+		70A7D82A2A8929A400F06E5E /* stellar_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = stellar_regular.otf; sourceTree = "<group>"; };
+		70A7D82B2A8929A400F06E5E /* hermano_alto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hermano_alto.ttf; sourceTree = "<group>"; };
+		70A7D8312A892AE400F06E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +70,8 @@
 		707D94E12A72F71C006276F5 /* loginswiftui */ = {
 			isa = PBXGroup;
 			children = (
+				70A7D8312A892AE400F06E5E /* Info.plist */,
+				70A7D8252A89297600F06E5E /* common */,
 				70C4122D2A7346B700AF286F /* datas */,
 				70C4122C2A73469D00AF286F /* models */,
 				70C4122B2A73469300AF286F /* views */,
@@ -77,6 +90,26 @@
 				707D94E92A72F71D006276F5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		70A7D8252A89297600F06E5E /* common */ = {
+			isa = PBXGroup;
+			children = (
+				70A7D8262A89298600F06E5E /* fonts */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		70A7D8262A89298600F06E5E /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				70A7D82B2A8929A400F06E5E /* hermano_alto.ttf */,
+				70A7D8272A8929A400F06E5E /* stellar_bold.otf */,
+				70A7D8292A8929A400F06E5E /* stellar_light.otf */,
+				70A7D8282A8929A400F06E5E /* stellar_medium.otf */,
+				70A7D82A2A8929A400F06E5E /* stellar_regular.otf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		70C4122B2A73469300AF286F /* views */ = {
@@ -185,8 +218,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70A7D82F2A8929A400F06E5E /* stellar_regular.otf in Resources */,
+				70A7D82D2A8929A400F06E5E /* stellar_medium.otf in Resources */,
+				70A7D8302A8929A400F06E5E /* hermano_alto.ttf in Resources */,
+				70A7D82E2A8929A400F06E5E /* stellar_light.otf in Resources */,
 				707D94EA2A72F71D006276F5 /* Preview Assets.xcassets in Resources */,
 				707D94E72A72F71D006276F5 /* Assets.xcassets in Resources */,
+				70A7D82C2A8929A400F06E5E /* stellar_bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +372,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"loginswiftui/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = loginswiftui/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -362,6 +401,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"loginswiftui/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = loginswiftui/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
