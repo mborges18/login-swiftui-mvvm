@@ -9,6 +9,14 @@ import SwiftUI
 
 @main
 struct loginswiftuiApp: App {
+    init(){
+        for family in UIFont.familyNames {
+             print(family)
+             for names in UIFont.fontNames(forFamilyName: family){
+             print("== \(names)")
+             }
+        }
+    }
     var body: some Scene {
         WindowGroup {
             SplashView()

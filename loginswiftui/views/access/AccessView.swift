@@ -25,18 +25,16 @@ struct AccessView: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
             .edgesIgnoringSafeArea(.all)
             
-            //TabBarView(currentItem: self.$currentPage)
-            
             HStack (spacing: 0) {
                 Button(action: {
                     leftButtonAction()
                     withAnimation { currentPage = 0 }
                 }) {
-                    Text("Acessar").padding()
+                    Text("ACESSAR").padding()
                         .frame(minWidth: 0, maxWidth: .infinity)
-                        .padding(.vertical, 8)
+                        .padding(.vertical, 10)
                         .fontWeight(.bold)
-                        .font(.system(size: 14))
+                        .font(.custom("Stellar-Bold", size: 14))
                         .background(currentPage == 0 ? Color(hex: 0x004DC1) : .white)
                         .foregroundColor(currentPage == 0 ? .white : .black)
                 }
@@ -44,11 +42,11 @@ struct AccessView: View {
                     rightButtonAction()
                     withAnimation { currentPage = 1 }
                 }) {
-                    Text("Cadastrar").padding()
+                    Text("CADASTRAR").padding()
                         .frame(minWidth: 0, maxWidth: .infinity)
-                        .padding(.vertical, 8)
+                        .padding(.vertical, 10)
                         .fontWeight(.bold)
-                        .font(.system(size: 14))
+                        .font(.custom("Stellar-Bold", size: 14))
                         .background (currentPage == 1 ? Color(hex: 0x004DC1) : .white)
                         .foregroundColor(currentPage == 1 ? .white : .black)
                 }
@@ -56,60 +54,11 @@ struct AccessView: View {
             .mask {
                 RoundedRectangle(cornerRadius: 10)
             }
-            .frame(width:.infinity)
-            .shadow(radius: 10)
-            .padding(30)
+            .shadow(color: Color.gray, radius: 0.5, x: 0.5, y: 0.5)
+            .shadow(color: Color.gray, radius: 0.5, x: -0.5, y: -0.5)
+            .padding(14)
             
         }
-    }
-}
-
-struct TabBarView: View {
-    
-    @Binding var currentItem : Int
-    var tabItens = ["Acessar", "Cadastrar"]
-    
-    var body: some View {
-        ScrollView {
-            HStack {
-                ForEach(Array(zip(self.tabItens.indices, self.tabItens)),
-                        id:\.0,
-                        content: {
-                    index, name in
-                    TabBarItem(
-                        currentTab: self.$currentItem,
-                        tabName: name,
-                        tab: index
-                    )
-                })
-            }
-        }.padding(.vertical, 20)
-    }
-}
-
-struct TabBarItem: View {
-    
-    @Binding var currentTab: Int
-    var tabName: String
-    var tab: Int
-    
-    var body: some View {
-        
-        Button(action: {
-            self.currentTab = tab
-        }) {
-            Text(tabName)
-                .padding(.vertical, 8)
-                .frame(width: 110)
-                .fontWeight(.bold)
-                .foregroundStyle(.white)
-            
-        }
-        .buttonStyle(.borderedProminent)
-        .buttonBorderShape(.roundedRectangle(radius:8))
-        .controlSize(.large)
-        .accentColor(Color(hex: 0x004DC1))
-        .shadow(radius: 10)
     }
 }
 
