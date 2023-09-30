@@ -20,6 +20,10 @@
 		70A7D82E2A8929A400F06E5E /* stellar_light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70A7D8292A8929A400F06E5E /* stellar_light.otf */; };
 		70A7D82F2A8929A400F06E5E /* stellar_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70A7D82A2A8929A400F06E5E /* stellar_regular.otf */; };
 		70A7D8302A8929A400F06E5E /* hermano_alto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70A7D82B2A8929A400F06E5E /* hermano_alto.ttf */; };
+		70B22D332AC87D4C00C68680 /* SingInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B22D322AC87D4C00C68680 /* SingInModel.swift */; };
+		70B22D352AC87D8E00C68680 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B22D342AC87D8E00C68680 /* SignInViewModel.swift */; };
+		70B22D382AC88DBC00C68680 /* CompTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B22D372AC88DBC00C68680 /* CompTextField.swift */; };
+		70B22D3A2AC88E3500C68680 /* CompSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B22D392AC88E3500C68680 /* CompSecureField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		70A7D82A2A8929A400F06E5E /* stellar_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = stellar_regular.otf; sourceTree = "<group>"; };
 		70A7D82B2A8929A400F06E5E /* hermano_alto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hermano_alto.ttf; sourceTree = "<group>"; };
 		70A7D8312A892AE400F06E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		70B22D322AC87D4C00C68680 /* SingInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInModel.swift; sourceTree = "<group>"; };
+		70B22D342AC87D8E00C68680 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		70B22D372AC88DBC00C68680 /* CompTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompTextField.swift; sourceTree = "<group>"; };
+		70B22D392AC88E3500C68680 /* CompSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompSecureField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 		70A7D8252A89297600F06E5E /* common */ = {
 			isa = PBXGroup;
 			children = (
+				70B22D362AC88D7E00C68680 /* components */,
 				70A7D8262A89298600F06E5E /* fonts */,
 			);
 			path = common;
@@ -112,6 +121,31 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		70B22D302AC87CE600C68680 /* access */ = {
+			isa = PBXGroup;
+			children = (
+				70B22D312AC87D0300C68680 /* signin */,
+			);
+			path = access;
+			sourceTree = "<group>";
+		};
+		70B22D312AC87D0300C68680 /* signin */ = {
+			isa = PBXGroup;
+			children = (
+				70B22D322AC87D4C00C68680 /* SingInModel.swift */,
+			);
+			path = signin;
+			sourceTree = "<group>";
+		};
+		70B22D362AC88D7E00C68680 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				70B22D372AC88DBC00C68680 /* CompTextField.swift */,
+				70B22D392AC88E3500C68680 /* CompSecureField.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		70C4122B2A73469300AF286F /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +157,7 @@
 		70C4122C2A73469D00AF286F /* models */ = {
 			isa = PBXGroup;
 			children = (
+				70B22D302AC87CE600C68680 /* access */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -148,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				707D94F12A72FA9B006276F5 /* SignInView.swift */,
+				70B22D342AC87D8E00C68680 /* SignInViewModel.swift */,
 			);
 			path = signin;
 			sourceTree = "<group>";
@@ -237,9 +273,13 @@
 			files = (
 				707D94E52A72F71C006276F5 /* ContentView.swift in Sources */,
 				707D94F32A72FA9B006276F5 /* SignUpView.swift in Sources */,
+				70B22D3A2AC88E3500C68680 /* CompSecureField.swift in Sources */,
 				707D94F42A72FA9B006276F5 /* SignInView.swift in Sources */,
 				707D94F52A72FA9B006276F5 /* AccessView.swift in Sources */,
+				70B22D352AC87D8E00C68680 /* SignInViewModel.swift in Sources */,
 				707D94E32A72F71C006276F5 /* loginswiftuiApp.swift in Sources */,
+				70B22D332AC87D4C00C68680 /* SingInModel.swift in Sources */,
+				70B22D382AC88DBC00C68680 /* CompTextField.swift in Sources */,
 				707D94F92A72FC34006276F5 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
