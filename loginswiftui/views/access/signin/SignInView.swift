@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct SignInView: View {
+
+    @State private var viewModel = SignInViewModel()
+    @FocusState private var handlerFocus: Bool
     
-    @State var email = ""
-    @State var password = ""
-    @State private var isKeepConnected = true
-    
-    func signIn() {}
+    func signIn() {
+        
+        if $viewModel.wrappedValue.signIn() {
+
+        } else {
+            $handlerFocus.wrappedValue = false
+        }
+    }
     
     var body: some View {
         VStack {
@@ -40,22 +46,24 @@ struct SignInView: View {
                 
                 VStack {
                     CompTextField(
-                        textField: TextField("E-mail", text: $email),
-                        imageName: "at"
-                    ).padding(.top, 20)
+                        textField: TextField("E-mail", text: $viewModel.model.email),
+                        imageName: "at",
+                        textError: $viewModel.wrappedValue.errorEmail,
+                        focusedField: $handlerFocus
+                    ).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                     
                     CompSecureField(
-                        secureField: SecureField("Senha", text: $password),
-                        imageName: "key"
-                        
-                    ).padding(.top, 20)
+                        secureField: SecureField("Senha", text: $viewModel.model.password),
+                        imageName: "key",
+                        textError: $viewModel.wrappedValue.errorPassword
+                    ).padding(.top, 0)
                     
-                    Toggle("Continuar conectado", isOn: $isKeepConnected)
+                    Toggle("Continuar conectado", isOn: $viewModel.model.isKeepConnected)
                         .toggleStyle(
                             ColoredToggleStyle(label: "Continuar conectado",
                                                onColor: Color(hex: 0x004DC1).opacity(0.4),
                                                offColor: Color(hex: 0x000000).opacity(0.1),
-                                               onThumbColor: Color(hex: 0x004DC1)))
+                                               onThumbColor: Color(hex: 0x004DC1))).padding(.top, 20)
                     
                     
                     Button(action: signIn
@@ -76,48 +84,9 @@ struct SignInView: View {
                     .shadow(color: Color.gray, radius: 0.5, x: 0.5, y: 0.5)
                     .shadow(color: Color.gray, radius: 0.5, x: -0.5, y: -0.5)
                 
-                }
+                }.padding(.top, 20)
             }
         }.padding()
-    }
-}
-
-struct CompTextField: View {
-    var textField: TextField<Text>
-    var imageName: String
-    
-    var body: some View {
-        
-        HStack {
-            Image(systemName: imageName)
-                .foregroundColor(.gray)
-            textField
-        }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(6)
-        .shadow(color: Color.gray, radius: 0.5, x: 0.5, y: 0.5)
-        .shadow(color: Color.gray, radius: 0.5, x: -0.5, y: -0.5)
-        
-    }
-}
-
-struct CompSecureField: View {
-    var secureField: SecureField<Text>
-    var imageName: String
-
-    var body: some View {
-        HStack {
-            Image(systemName: imageName)
-                .foregroundColor(.gray)
-            secureField
-        }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(6)
-        .shadow(color: Color.gray, radius: 1, x: 1, y: 1)
-        .shadow(color: Color.gray, radius: 1, x: -1, y: -1)
-        
     }
 }
 
@@ -149,7 +118,6 @@ struct ColoredToggleStyle: ToggleStyle {
             Text(label).font(.custom("Stellar-Regular", size: 15)).frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline)
         }
         .font(.title)
-        .padding(.top, 10)
     }
 }
 
