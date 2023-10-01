@@ -22,7 +22,6 @@ struct CompTextField: View {
     }
     
     var body: some View {
-        
         HStack {
             Image(systemName: imageName).foregroundColor(handleColor())
             textField.focused($focusedField)
@@ -30,10 +29,9 @@ struct CompTextField: View {
         .padding()
         .background(Color.white)
         .cornerRadius(6)
-        .shadow(color: handleColor(), radius: 0.5, x: 0.5, y: 0.5)
-        .shadow(color: handleColor(), radius: 0.5, x: -0.5, y: -0.5)
+        .shadow(color: handleColor(), radius: 1, x: 1, y: 1)
+        .shadow(color: handleColor(), radius: 1, x: -1, y: -1)
         
-        Text(textError!).font(.custom("Stellar-Regular", size: 15)).frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline).foregroundColor(.red)
-            .padding(.bottom, 10)
+        Text(textError!).font(.custom("Stellar-Regular", size: 15)).frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline).foregroundColor(.red).padding(.top, 2)
     }
 }

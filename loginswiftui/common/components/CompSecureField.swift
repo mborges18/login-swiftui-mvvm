@@ -11,6 +11,7 @@ struct CompSecureField: View {
     var secureField: SecureField<Text>
     var imageName: String
     var textError: String?
+    @FocusState.Binding var focusedField: Bool
     
     private func handleColor() -> Color {
         if textError!.isEmpty {
@@ -19,22 +20,19 @@ struct CompSecureField: View {
             return Color.red
         }
     }
-
     
     var body: some View {
-        VStack {
-            HStack {
-                Image(systemName: imageName).foregroundColor(handleColor())
-                secureField
-            }
-            .padding()
-            .background(Color.white)
-            .cornerRadius(6)
-            .shadow(color: handleColor(), radius: 1, x: 1, y: 1)
-            .shadow(color: handleColor(), radius: 1, x: -1, y: -1)
-            
-            Text(textError!).font(.custom("Stellar-Regular", size: 15)).frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline).foregroundColor(.red)
+        HStack {
+            Image(systemName: imageName).foregroundColor(handleColor())
+            secureField.focused($focusedField)
         }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(6)
+        .shadow(color: handleColor(), radius: 1, x: 1, y: 1)
+        .shadow(color: handleColor(), radius: 1, x: -1, y: -1)
+        
+        Text(textError!).font(.custom("Stellar-Regular", size: 15)).frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline).foregroundColor(.red).padding(.top, 2)
     }
 }
 

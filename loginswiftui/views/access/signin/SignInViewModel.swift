@@ -6,15 +6,16 @@
 //
 
 import Foundation
+import Alamofire
 
 struct SignInViewModel {
-  
+    
     private var invalidField = "Campo inválido"
     var errorEmail = ""
     var errorPassword = ""
     var model = SignInModel(email: "", password: "")
     
-    mutating func signIn() -> Bool {
+    mutating func validate() -> Bool {
         var isValid = true
         
         if model.email.isEmpty {
@@ -32,5 +33,14 @@ struct SignInViewModel {
         }
         
         return isValid
+    }
+    
+    func signIn() {
+        AF.request("https://api-souls-and-cells-792613245.development.catalystserverless.com/server/signin",
+                   method: .post,
+                   parameters: model,
+                   encoder: JSONParameterEncoder.default).response { response in
+            debugPrint(response)
+        }
     }
 }

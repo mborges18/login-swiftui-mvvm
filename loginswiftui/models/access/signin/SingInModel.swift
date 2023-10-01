@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SignInModel {
+struct SignInModel: Encodable {
     var email: String
     var password: String
     var isKeepConnected: Bool = false

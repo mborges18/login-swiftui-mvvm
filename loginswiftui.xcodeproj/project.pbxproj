@@ -24,6 +24,10 @@
 		70B22D352AC87D8E00C68680 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B22D342AC87D8E00C68680 /* SignInViewModel.swift */; };
 		70B22D382AC88DBC00C68680 /* CompTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B22D372AC88DBC00C68680 /* CompTextField.swift */; };
 		70B22D3A2AC88E3500C68680 /* CompSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B22D392AC88E3500C68680 /* CompSecureField.swift */; };
+		70BC40E52AC9B561001F569E /* CompToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC40E42AC9B561001F569E /* CompToggleButton.swift */; };
+		70BC40E72AC9B86B001F569E /* CompButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC40E62AC9B86B001F569E /* CompButton.swift */; };
+		70BC40E92AC9BFC0001F569E /* CompHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC40E82AC9BFC0001F569E /* CompHeader.swift */; };
+		70BC40EC2AC9D989001F569E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 70BC40EB2AC9D989001F569E /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,9 @@
 		70B22D342AC87D8E00C68680 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		70B22D372AC88DBC00C68680 /* CompTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompTextField.swift; sourceTree = "<group>"; };
 		70B22D392AC88E3500C68680 /* CompSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompSecureField.swift; sourceTree = "<group>"; };
+		70BC40E42AC9B561001F569E /* CompToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompToggleButton.swift; sourceTree = "<group>"; };
+		70BC40E62AC9B86B001F569E /* CompButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompButton.swift; sourceTree = "<group>"; };
+		70BC40E82AC9BFC0001F569E /* CompHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70BC40EC2AC9D989001F569E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +150,9 @@
 			children = (
 				70B22D372AC88DBC00C68680 /* CompTextField.swift */,
 				70B22D392AC88E3500C68680 /* CompSecureField.swift */,
+				70BC40E42AC9B561001F569E /* CompToggleButton.swift */,
+				70BC40E62AC9B86B001F569E /* CompButton.swift */,
+				70BC40E82AC9BFC0001F569E /* CompHeader.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -212,6 +223,9 @@
 			dependencies = (
 			);
 			name = loginswiftui;
+			packageProductDependencies = (
+				70BC40EB2AC9D989001F569E /* Alamofire */,
+			);
 			productName = loginswiftui;
 			productReference = 707D94DF2A72F71C006276F5 /* loginswiftui.app */;
 			productType = "com.apple.product-type.application";
@@ -240,6 +254,9 @@
 				Base,
 			);
 			mainGroup = 707D94D62A72F71C006276F5;
+			packageReferences = (
+				70BC40EA2AC9D989001F569E /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 707D94E02A72F71C006276F5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -276,10 +293,13 @@
 				70B22D3A2AC88E3500C68680 /* CompSecureField.swift in Sources */,
 				707D94F42A72FA9B006276F5 /* SignInView.swift in Sources */,
 				707D94F52A72FA9B006276F5 /* AccessView.swift in Sources */,
+				70BC40E92AC9BFC0001F569E /* CompHeader.swift in Sources */,
 				70B22D352AC87D8E00C68680 /* SignInViewModel.swift in Sources */,
 				707D94E32A72F71C006276F5 /* loginswiftuiApp.swift in Sources */,
 				70B22D332AC87D4C00C68680 /* SingInModel.swift in Sources */,
+				70BC40E52AC9B561001F569E /* CompToggleButton.swift in Sources */,
 				70B22D382AC88DBC00C68680 /* CompTextField.swift in Sources */,
+				70BC40E72AC9B86B001F569E /* CompButton.swift in Sources */,
 				707D94F92A72FC34006276F5 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +502,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		70BC40EA2AC9D989001F569E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		70BC40EB2AC9D989001F569E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70BC40EA2AC9D989001F569E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 707D94D72A72F71C006276F5 /* Project object */;
 }
